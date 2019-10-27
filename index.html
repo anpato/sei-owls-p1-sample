@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/Main.css" />
+
+		<title>Document</title>
+	</head>
+	<body>
+		<nav>
+			<div class="log-in">
+				<button id="toggle-btn">Log In</button>
+			</div>
+			<div class="links">
+				<a href="">Home</a>
+				<a href="">Shop</a>
+				<a href="">About</a>
+			</div>
+		</nav>
+		<div class="card login-card closed">
+			<div class="form">
+				<h3>Sign In</h3>
+				<form>
+					<div class="input">
+						<input name="username" type="text" required />
+						<label for="username"><span>Username</span></label>
+					</div>
+					<div class="input">
+						<input name="password" type="password" required />
+						<label for="password"><span>Password</span></label>
+					</div>
+					<button>Sign In</button>
+				</form>
+			</div>
+		</div>
+		<div class="hero">
+			<div class="left"></div>
+			<div class="right">
+				<div class="form">
+					<h3>Sign Up</h3>
+					<form>
+						<div class="input">
+							<input name="name" type="text" required />
+							<label for="name"><span>Name</span></label>
+						</div>
+						<div class="input">
+							<input name="email" type="email" required />
+							<label for="email"><span>Email</span></label>
+						</div>
+						<div class="input">
+							<input name="username" type="text" required />
+							<label for="username"><span>Username</span></label>
+						</div>
+						<div class="input">
+							<input name="password" type="password" required />
+							<label for="password"><span>Password</span></label>
+						</div>
+						<button>Sign Up</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<section class="brands">
+			<h3>Products By</h3>
+			<ul>
+				<li>Nike</li>
+				<li>Adidas</li>
+				<li>Gucci</li>
+				<li>Cole Haan</li>
+				<li>Rolex</li>
+				<li>Supreme</li>
+			</ul>
+		</section>
+		<footer class="main-footer">
+			<div class="admin">
+				<ul>
+					<li>Policy</li>
+					<li>Contact</li>
+					<li>Terms and Conditions</li>
+				</ul>
+			</div>
+			<h4>&copy Andre Pato</h4>
+			<p>Design By Andre Pato</p>
+		</footer>
+		<script data-main="scripts/main" src="scripts/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,470 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #ffc1c6;
+}
+
+button {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  font-size: 0.9em;
+  border-radius: 6px;
+  padding: 0.5em 1.2em;
+}
+
+form {
+  margin-top: -2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70%;
+  width: 80%;
+}
+
+form .input {
+  position: relative;
+  margin-top: 1em;
+}
+
+form .input input {
+  width: 96%;
+  padding: 0.5em 0.5em;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid #283269;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  outline: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+form .input label {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  left: 10px;
+  top: 6px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+form .input input:active,
+form .input input:focus {
+  border-color: #e5d9ff;
+}
+
+form .input input:focus + label,
+form .input input:active + label {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  color: #fbfaff;
+}
+
+form .input input:valid + label {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  color: #fbfaff;
+}
+
+form button {
+  background: #e5d9ff;
+  border-color: #e5d9ff;
+  width: 50%;
+  margin: auto;
+}
+
+form button:hover {
+  opacity: 0.6;
+  -webkit-box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.8);
+          box-shadow: 1px 3px 20px rgba(0, 0, 0, 0.8);
+}
+
+.open {
+  -webkit-animation: openForm 0.8s forwards;
+          animation: openForm 0.8s forwards;
+}
+
+.closed {
+  -webkit-animation: closeForm 0.8s forwards;
+          animation: closeForm 0.8s forwards;
+}
+
+@-webkit-keyframes closeForm {
+  from {
+    height: 200px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    height: 0px;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+}
+
+@keyframes closeForm {
+  from {
+    height: 200px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+  to {
+    height: 0px;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+}
+
+@-webkit-keyframes openForm {
+  from {
+    height: 0px;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    height: 200px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+@keyframes openForm {
+  from {
+    height: 0px;
+    -webkit-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+  }
+  to {
+    height: 200px;
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.login-card {
+  position: absolute;
+  z-index: 1000;
+  background-color: #283269;
+  width: 30%;
+  padding: 2em;
+  margin-left: 1em;
+  border-radius: 6px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-clip-path: polygon(9% 0, 14% 10%, 100% 10%, 100% 100%, 81% 100%, 50% 100%, 0 100%, 0% 70%, 0 10%, 4% 10%);
+          clip-path: polygon(9% 0, 14% 10%, 100% 10%, 100% 100%, 81% 100%, 50% 100%, 0 100%, 0% 70%, 0 10%, 4% 10%);
+}
+
+.login-card h3 {
+  text-align: center;
+  margin-bottom: 2em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #fbfaff;
+}
+
+.login-card form {
+  width: 90%;
+  margin: -1em auto 1em auto;
+}
+
+.login-card form .input {
+  width: 100%;
+}
+
+.login-card form .input input:active,
+.login-card form .input input:focus {
+  border-color: #e5d9ff;
+}
+
+.login-card form .input input:focus + label,
+.login-card form .input input:active + label {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  color: #fbfaff;
+}
+
+.login-card form .input input:valid + label {
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+  color: #fbfaff;
+}
+
+.login-card form button {
+  margin: 1em auto;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 3em;
+}
+
+nav .links {
+  margin-right: 20px;
+}
+
+nav .links a {
+  color: #30333f;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+nav .links a:hover {
+  background: #44416e;
+  color: #fbfaff;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+nav .log-in {
+  margin-left: 20px;
+}
+
+nav .log-in button {
+  color: #fbfaff;
+  background: #283269;
+  border-color: #283269;
+}
+
+nav .log-in button:hover {
+  background: #44416e;
+  border-color: #44416e;
+  -webkit-box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.8);
+          box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 8%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 70vh;
+  background: url("../assets/bg.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  position: relative;
+}
+
+.hero .left {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  max-width: 40vw;
+}
+
+.hero .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 50vw;
+}
+
+.hero .right .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #283269;
+  width: 80%;
+  height: 90%;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hero .right .form form .input {
+  position: relative;
+  margin-top: 1em;
+}
+
+.hero .right .form form .input input {
+  width: 96%;
+  padding: 0.5em 0.5em;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 2px solid #283269;
+  -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+          box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
+  outline: none;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hero .right .form form .input label {
+  position: absolute;
+  pointer-events: none;
+  width: 100%;
+  left: 10px;
+  top: 6px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hero .right .form form .input input:active,
+.hero .right .form form .input input:focus {
+  border-color: #e5d9ff;
+}
+
+.hero .right .form form .input input:focus + label,
+.hero .right .form form .input input:active + label {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  color: #fbfaff;
+}
+
+.hero .right .form form .input input:valid + label {
+  -webkit-transform: translateY(-30px);
+          transform: translateY(-30px);
+  color: #fbfaff;
+}
+
+.hero .right .form form button {
+  margin: 2em auto 0 auto;
+}
+
+.hero .right .form h3 {
+  color: #fbfaff;
+  margin-top: -2em;
+  margin-bottom: 2em;
+}
+
+.brands {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: auto;
+  background: #fbfaff;
+  padding: 2em 0;
+}
+
+.brands h3 {
+  color: #44416e;
+}
+
+.brands ul {
+  width: 50%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.brands ul li {
+  font-size: 1.1rem;
+  opacity: 0.6;
+  color: #44416e;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.brands ul li:hover {
+  opacity: 1;
+}
+
+.main-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-footer ul li {
+  cursor: pointer;
+  opacity: 0.6;
+  color: #283269;
+}
+
+.main-footer ul li:hover {
+  opacity: 1;
+}
+
+.main-footer h4,
+.main-footer p {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.main-footer p {
+  margin-right: 3em;
+}
+/*# sourceMappingURL=Main.css.map */
