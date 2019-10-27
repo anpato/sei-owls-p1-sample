@@ -94,11 +94,61 @@ form button:hover {
 .open {
   -webkit-animation: openForm 0.8s forwards;
           animation: openForm 0.8s forwards;
+  -webkit-box-shadow: 1px 3px 10px black;
+          box-shadow: 1px 3px 10px black;
+}
+
+.open .form {
+  -webkit-animation: showForm 2s forwards;
+          animation: showForm 2s forwards;
+  -webkit-transition: all 0.9s;
+  transition: all 0.9s;
 }
 
 .closed {
   -webkit-animation: closeForm 0.8s forwards;
           animation: closeForm 0.8s forwards;
+}
+
+.closed .form {
+  -webkit-animation: hideForm 0.3s forwards;
+          animation: hideForm 0.3s forwards;
+}
+
+@-webkit-keyframes hideForm {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes hideForm {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes showForm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showForm {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes closeForm {
@@ -162,8 +212,9 @@ ul {
   z-index: 1000;
   background-color: #283269;
   width: 30%;
-  padding: 2em;
+  padding: 2em 2em 3em 2em;
   margin-left: 1em;
+  margin-top: 0.8em;
   border-radius: 6px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -175,8 +226,18 @@ ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-clip-path: polygon(9% 0, 14% 10%, 100% 10%, 100% 100%, 81% 100%, 50% 100%, 0 100%, 0% 70%, 0 10%, 4% 10%);
-          clip-path: polygon(9% 0, 14% 10%, 100% 10%, 100% 100%, 81% 100%, 50% 100%, 0 100%, 0% 70%, 0 10%, 4% 10%);
+}
+
+.login-card .triangle {
+  position: absolute;
+  top: -5px;
+  left: 10px;
+  background: #283269;
+  height: 50px;
+  width: 50px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-radius: 6px;
 }
 
 .login-card h3 {
@@ -188,34 +249,40 @@ ul {
   color: #fbfaff;
 }
 
-.login-card form {
+.login-card .form {
+  margin: auto;
   width: 90%;
-  margin: -1em auto 1em auto;
 }
 
-.login-card form .input {
+.login-card .form form {
   width: 100%;
 }
 
-.login-card form .input input:active,
-.login-card form .input input:focus {
+.login-card .form form .input {
+  width: 100%;
+}
+
+.login-card .form form .input input:active,
+.login-card .form form .input input:focus {
   border-color: #e5d9ff;
 }
 
-.login-card form .input input:focus + label,
-.login-card form .input input:active + label {
-  -webkit-transform: translateX(-100px);
-          transform: translateX(-100px);
-  color: #fbfaff;
+.login-card .form form .input input:focus + label,
+.login-card .form form .input input:active + label {
+  -webkit-transform: translateX(70%);
+          transform: translateX(70%);
+  color: #30333f;
+  opacity: 0.5;
 }
 
-.login-card form .input input:valid + label {
-  -webkit-transform: translateX(-100px);
-          transform: translateX(-100px);
-  color: #fbfaff;
+.login-card .form form .input input:valid + label {
+  -webkit-transform: translateX(70%);
+          transform: translateX(70%);
+  color: #30333f;
+  opacity: 0.5;
 }
 
-.login-card form button {
+.login-card .form form button {
   margin: 1em auto;
 }
 
@@ -324,7 +391,7 @@ nav .log-in button:hover {
           align-items: center;
   background: #283269;
   width: 80%;
-  height: 90%;
+  height: 70%;
   border-radius: 6px;
   -webkit-box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.4);
           box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.4);
@@ -335,10 +402,11 @@ nav .log-in button:hover {
 .hero .right .form form .input {
   position: relative;
   margin-top: 1em;
+  margin: 2em auto -5em auto;
+  width: 90%;
 }
 
 .hero .right .form form .input input {
-  width: 96%;
   padding: 0.5em 0.5em;
   font-size: 1rem;
   border-radius: 6px;
