@@ -74,19 +74,23 @@ form {
 	}
 }
 
+.login-card .open {
+}
+
 .open {
 	animation: openForm 0.8s forwards;
 	box-shadow: 1px 3px 10px rgba(0, 0, 0, 1);
-
+	display: block;
 	.form {
 		animation: showForm 2s forwards;
 		transition: all 0.9s;
 	}
 }
-
+.hidden {
+	display: none;
+}
 .closed {
 	animation: closeForm 0.8s forwards;
-
 	.form {
 		animation: hideForm 0.3s forwards;
 	}
@@ -114,10 +118,12 @@ form {
 	from {
 		height: 200px;
 		transform: rotateX(0deg);
+		opacity: 1;
 	}
 	to {
 		height: 0px;
 		transform: rotateX(90deg);
+		opacity: 0;
 	}
 }
 
@@ -140,7 +146,7 @@ ul {
 	position: absolute;
 	z-index: 1000;
 	background-color: $color4;
-	width: 30%;
+	width: 400px;
 	padding: 2em 2em 3em 2em;
 	margin-left: 1em;
 	margin-top: 0.8em;
@@ -179,7 +185,7 @@ ul {
 	}
 	.form {
 		margin: auto;
-		width: 90%;
+		// max-width: 90%;
 		form {
 			width: 100%;
 			.input {
@@ -248,7 +254,7 @@ nav {
 
 .hero {
 	display: flex;
-	margin-top: 8%;
+	margin-top: 2%;
 	justify-content: space-around;
 	height: 70vh;
 	background: url('../assets/bg.jpg');
@@ -368,11 +374,14 @@ nav {
 .main-footer {
 	display: flex;
 	justify-content: space-between;
+	background: $color5;
+	color: $color1;
 	ul {
 		li {
 			cursor: pointer;
 			opacity: 0.6;
-			color: $color4;
+			color: $color1;
+			transition: all 0.4s ease;
 			&:hover {
 				opacity: 1;
 			}

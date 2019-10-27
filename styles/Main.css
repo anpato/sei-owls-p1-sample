@@ -96,6 +96,7 @@ form button:hover {
           animation: openForm 0.8s forwards;
   -webkit-box-shadow: 1px 3px 10px black;
           box-shadow: 1px 3px 10px black;
+  display: block;
 }
 
 .open .form {
@@ -103,6 +104,10 @@ form button:hover {
           animation: showForm 2s forwards;
   -webkit-transition: all 0.9s;
   transition: all 0.9s;
+}
+
+.hidden {
+  display: none;
 }
 
 .closed {
@@ -156,11 +161,13 @@ form button:hover {
     height: 200px;
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg);
+    opacity: 1;
   }
   to {
     height: 0px;
     -webkit-transform: rotateX(90deg);
             transform: rotateX(90deg);
+    opacity: 0;
   }
 }
 
@@ -169,11 +176,13 @@ form button:hover {
     height: 200px;
     -webkit-transform: rotateX(0deg);
             transform: rotateX(0deg);
+    opacity: 1;
   }
   to {
     height: 0px;
     -webkit-transform: rotateX(90deg);
             transform: rotateX(90deg);
+    opacity: 0;
   }
 }
 
@@ -211,7 +220,7 @@ ul {
   position: absolute;
   z-index: 1000;
   background-color: #283269;
-  width: 30%;
+  width: 400px;
   padding: 2em 2em 3em 2em;
   margin-left: 1em;
   margin-top: 0.8em;
@@ -251,7 +260,6 @@ ul {
 
 .login-card .form {
   margin: auto;
-  width: 90%;
 }
 
 .login-card .form form {
@@ -341,7 +349,7 @@ nav .log-in button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 8%;
+  margin-top: 2%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   height: 70vh;
@@ -514,12 +522,16 @@ nav .log-in button:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background: #44416e;
+  color: #fbfaff;
 }
 
 .main-footer ul li {
   cursor: pointer;
   opacity: 0.6;
-  color: #283269;
+  color: #fbfaff;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 .main-footer ul li:hover {
