@@ -1,0 +1,15 @@
+{
+  "name": "sei-owls-p1-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/anpato/sei-owls-p1-sample.git",
+  "author": "Andre Pato <anpato1994@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  }
+}
