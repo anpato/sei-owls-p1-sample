@@ -56,6 +56,23 @@ function Main() {
 			price: '$120.00'
 		}
 	]
+
+	let filters = []
+	const snacks = []
+	let query = ''
+	function filterProducts(e) {
+		e.preventDefault()
+		filters = [...filters, query]
+		renderSnacks(filters)
+		shopContainer()
+	}
+
+	function setQuery(e) {
+		const { value } = e.target
+		query = value
+		filterProducts(e)
+	}
+
 	function createLinks() {
 		const linkText = ['Home', 'Shop', 'About']
 		const linkContainer = document.createElement('div')
@@ -89,8 +106,18 @@ function Main() {
 
 		return button
 	}
+	function renderSnacks() {
+		if (filters.length) {
+			return filters.forEach((name) => {
+				const snack = document.createElement('div')
+				snack.innerText = name
+				snack.className = 'snack'
+				snacks.push(snack)
+			})
+		}
+	}
 
-	function createInputs(num, element, params) {
+	function createInputs(num, element, params, handler) {
 		for (let i = 0; i < num; i++) {
 			const inputContainer = document.createElement('div')
 			inputContainer.classList.add('input')
@@ -105,10 +132,13 @@ function Main() {
 
 				input.setAttribute('name', params[i].name)
 				input.setAttribute('type', params[i].type)
+				input.setAttribute('value', params[i].value)
 				if (params[j].required === true) {
 					input.setAttribute('required', '')
 				}
 			}
+
+			input.addEventListener('change', (e) => handler(e))
 			label.appendChild(span)
 			inputContainer.appendChild(input)
 			inputContainer.appendChild(label)
@@ -136,11 +166,13 @@ function Main() {
 	}
 
 	function searchContainer(element) {
-		const params = [{ name: 'search', type: 'text', required: true }]
+		const params = [
+			{ name: 'search', type: 'text', value: query, required: true }
+		]
 		const searchContainer = document.createElement('div')
 		const inputContainer = document.createElement('div')
 		inputContainer.className = 'search-input'
-		createInputs(1, inputContainer, params)
+		createInputs(1, inputContainer, params, setQuery)
 		const button = createButtons('Search')
 		inputContainer.appendChild(button)
 		searchContainer.className = 'search-container'
@@ -148,18 +180,21 @@ function Main() {
 		element.appendChild(searchContainer)
 	}
 
-	function filterContainer(element) {
+	function filterContainer() {
 		const filterContainer = document.createElement('div')
 		filterContainer.className = 'filter-container'
-		// snack(filterContainer)
-		element.appendChild(filterContainer)
+
+		if (filters.length) {
+			snacks.forEach((snack) => filterContainer.appendChild(snack))
+		}
+		return filterContainer
 	}
 
 	function shopContainer() {
 		const container = document.createElement('div')
 		container.className = 'container'
 		searchContainer(container)
-		filterContainer(container)
+		container.appendChild(filterContainer())
 		body.appendChild(container)
 		return container
 	}
