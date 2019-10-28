@@ -1,5 +1,5 @@
-const { createInputs, createButtons, createHeaders } = require('../tools/')
-const LoginCardControl = require('../Events/CardControl')
+const { createInputs, createButtons, createHeaders } = require('../../tools')
+const LoginCardControl = require('../../Events/CardControl')
 module.exports = function(body) {
 	const inputParams = [
 		{ name: 'username', type: 'text', required: true },

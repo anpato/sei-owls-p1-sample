@@ -1,7 +1,7 @@
-const { createInputs, createButtons } = require('../tools')
+const { createInputs, createButtons } = require('../../tools')
 
-module.exports = function(element) {
-	const params = [{ name: 'search', type: 'text', required: false }]
+module.exports = function(element, value) {
+	const params = [{ name: 'search', type: 'text', value, required: true }]
 	const searchContainer = document.createElement('div')
 	const inputContainer = document.createElement('div')
 	inputContainer.className = 'search-input'

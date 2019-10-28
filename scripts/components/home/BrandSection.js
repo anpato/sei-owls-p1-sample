@@ -1,4 +1,4 @@
-const { createHeaders, createListItems } = require('../tools')
+const { createHeaders, createListItems } = require('../../tools')
 module.exports = function(body) {
 	const brands = ['Nike', 'Adidas', 'Gucci', 'Cole Haan', 'Rolex', 'Supreme']
 	const brandSection = document.createElement('section')

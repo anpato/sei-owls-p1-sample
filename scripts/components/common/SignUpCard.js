@@ -1,4 +1,4 @@
-const { createHeaders, createButtons, createInputs } = require('../tools/')
+const { createHeaders, createButtons, createInputs } = require('../../tools')
 module.exports = function() {
 	const params = [
 		{ name: 'name', type: 'text', required: true },

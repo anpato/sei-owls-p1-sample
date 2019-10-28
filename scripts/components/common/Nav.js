@@ -1,4 +1,4 @@
-const { createButtons } = require('../tools/')
+const { createButtons } = require('../../tools')
 const createLinks = require('./NavLinks')
 
 module.exports = function(body) {

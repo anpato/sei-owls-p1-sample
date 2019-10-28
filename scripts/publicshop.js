@@ -46,7 +46,7 @@ module.exports = function(element) {
 
 },{}],4:[function(require,module,exports){
 const snack = require('../common/Snack')
-module.exports = function(filters) {
+module.exports = function(element) {
 	const filterContainer = document.createElement('div')
 	filterContainer.className = 'filter-container'
 
@@ -83,12 +83,14 @@ module.exports = function(element) {
 },{}],6:[function(require,module,exports){
 const { createInputs, createButtons } = require('../../tools')
 
-module.exports = function(element, value) {
-	const params = [{ name: 'search', type: 'text', value, required: true }]
+module.exports = function(element) {
+	const params = [
+		{ name: 'search', type: 'text', value: query, required: true }
+	]
 	const searchContainer = document.createElement('div')
 	const inputContainer = document.createElement('div')
 	inputContainer.className = 'search-input'
-	createInputs(1, inputContainer, params)
+	createInputs(1, inputContainer, params, setQuery)
 	const button = createButtons('Search')
 	inputContainer.appendChild(button)
 	searchContainer.className = 'search-container'
@@ -99,11 +101,11 @@ module.exports = function(element, value) {
 },{"../../tools":9}],7:[function(require,module,exports){
 const searchContainer = require('./SearchContainer')
 const filterContainer = require('./FilterContainer')
-module.exports = function(body, filters) {
+module.exports = function(body) {
 	const container = document.createElement('div')
 	container.className = 'container'
 	searchContainer(container)
-	container.appendChild(filterContainer(filters))
+	container.appendChild(filterContainer())
 	body.appendChild(container)
 	return container
 }
@@ -115,14 +117,11 @@ const FilterContainer = require('../../components/shop/FilterContainer')
 const SearchContainer = require('../../components/shop/SearchContainer')
 const ProductContainer = require('../../components/shop/ProductContainer')
 
-function Main() {
+module.exports = function() {
 	const body = document.querySelector('body')
-	let query = ''
+
 	Nav(body)
-	ShopContainer(body, query)
-	// SearchContainer(ShopContainer())
 }
-Main()
 
 },{"../../components/common/Nav":1,"../../components/shop/FilterContainer":4,"../../components/shop/ProductContainer":5,"../../components/shop/SearchContainer":6,"../../components/shop/ShopContainer":7}],9:[function(require,module,exports){
 function createListItems(items, element) {

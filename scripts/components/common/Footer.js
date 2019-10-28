@@ -1,4 +1,4 @@
-const { createListItems } = require('../tools')
+const { createListItems } = require('../../tools')
 module.exports = function(body) {
 	const items = ['Policy', 'Contact', 'Terms and Conditions']
 	const footer = document.createElement('footer')

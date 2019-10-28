@@ -1,4 +1,4 @@
-const renderSignUpCard = require('./SignUpCard')
+const renderSignUpCard = require('../common/SignUpCard')
 module.exports = function(body) {
 	const hero = document.createElement('div')
 	const left = document.createElement('div')
